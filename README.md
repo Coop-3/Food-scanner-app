@@ -1,50 +1,10 @@
-# Welcome to your Expo app 👋
+# Food-scanner-app
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+Problem Statement
+Food waste is a persistent and growing problem for households due to forgotten expiration dates, poor visibility into food freshness, and lack of centralized tracking for items stored across refrigerators, counters, and cupboards. Existing grocery and pantry apps often rely on manual input only, lack intuitive visual indicators, or overwhelm users with unnecessary features. As a result, users frequently discard food unnecessarily or consume items past their safe use date.
+There is a need for a simple, reliable system that helps users track food freshness, identify items nearing expiration, and make informed decisions about consumption and restocking.
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Proposed Solution
+We propose developing a food scanner application that allows users to track food items and their freshness using a color-coded status system. Users will be able to add items manually, scan barcodes, or capture expiration dates using their device camera. The system will store item data in a centralized database, visually indicate freshness status, and assist users with grocery planning and basic meal suggestions.
+The application will prioritize usability, clear feedback, and manageable technical scope while demonstrating strong software engineering practices such as modular design, validation, testing, and documentation.
