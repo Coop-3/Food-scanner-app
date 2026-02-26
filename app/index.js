@@ -1,6 +1,5 @@
 // app/index.js
 import { useRouter } from "expo-router";
-import React from "react";
 import {
   FlatList,
   StyleSheet,
@@ -12,25 +11,48 @@ import {
 export default function HomeScreen() {
   const router = useRouter();
 
-  // Example dummy data for items
+  // Example dummy data
   const items = [
-    { id: "1", name: "Milk" },
-    { id: "2", name: "Eggs" },
-    { id: "3", name: "Bread" },
+    { id: "1", name: "Milk", status: "fresh" },
+    { id: "2", name: "Eggs", status: "expiring" },
+    { id: "3", name: "Bread", status: "expired" },
+    { id: "4", name: "Cheese", status: "fresh" },
   ];
+
+  const getStatusColor = (status) => {
+    if (status === "fresh") return "#2ECC40";
+    if (status === "expiring") return "#FF851B";
+    if (status === "expired") return "#FF4136";
+    return "#aaa";
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Grocery List</Text>
+      <Text style={styles.header}>My Inventory</Text>
 
       <FlatList
         data={items}
+        numColumns={2}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.listContainer}
         renderItem={({ item }) => (
-          <View style={styles.itemCard}>
+          <TouchableOpacity
+            style={styles.itemCard}
+            onPress={() => console.log("Open item:", item.name)}
+          >
             <Text style={styles.itemText}>{item.name}</Text>
-          </View>
+
+            <View
+              style={[
+                styles.statusBadge,
+                { backgroundColor: getStatusColor(item.status) },
+              ]}
+            >
+              <Text style={styles.statusText}>
+                {item.status.toUpperCase()}
+              </Text>
+            </View>
+          </TouchableOpacity>
         )}
       />
 
@@ -47,36 +69,60 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#001f3f", // navy blue
+    backgroundColor: "#001f3f",
     padding: 20,
   },
   header: {
-    color: "#d3d3d3", // light grey for contrast
-    fontSize: 32,
+    color: "#d3d3d3",
+    fontSize: 28,
     fontWeight: "bold",
     marginBottom: 20,
   },
   listContainer: {
-    paddingBottom: 100,
+    paddingBottom: 120,
   },
   itemCard: {
-    backgroundColor: "#111111", // dark grey
-    padding: 15,
-    borderRadius: 10,
-    marginBottom: 10,
+    flex: 1,
+    backgroundColor: "#111111",
+    padding: 20,
+    borderRadius: 18,
+    margin: 8,
+    justifyContent: "space-between",
+    shadowColor: "#000",
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 6,
+    minHeight: 120,
   },
   itemText: {
     color: "#fff",
     fontSize: 18,
+    fontWeight: "600",
+  },
+  statusBadge: {
+    marginTop: 15,
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 20,
+    alignSelf: "flex-start",
+  },
+  statusText: {
+    color: "#fff",
+    fontSize: 12,
+    fontWeight: "bold",
   },
   addButton: {
     position: "absolute",
     bottom: 30,
     right: 20,
-    backgroundColor: "#0074D9", // bright blue accent
+    backgroundColor: "#0074D9",
     paddingVertical: 15,
     paddingHorizontal: 25,
     borderRadius: 30,
+    shadowColor: "#000",
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
   },
   addButtonText: {
     color: "#fff",
