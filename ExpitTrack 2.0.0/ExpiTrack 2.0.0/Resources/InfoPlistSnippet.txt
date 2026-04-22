@@ -1,0 +1,10 @@
+Add these keys to your app target Info settings:
+
+Privacy - Camera Usage Description
+ExpiTrack uses the camera so you can capture grocery item photos.
+
+Privacy - Photo Library Usage Description
+ExpiTrack uses your photo library so you can attach photos to tracked items.
+
+Privacy - Photo Library Additions Usage Description
+ExpiTrack can save selected item photos for future use.
