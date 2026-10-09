@@ -36,13 +36,6 @@ ExpiTrack lets users add food items by hand, by photo, or by scanning an expirat
 | Expiring soon | Yellow | 3 days or less until expiration |
 | Expired | Red | Past the expiration date |
 
-## Screenshots
-
-TODO: add simulator or device screenshots to a `docs/` folder and link them here.
-
-![Dashboard](Dashboard_Screen.png)
-![Add item](Add-item.png)
-![Grocery List](Grocery-list.png)
 
 ## Tech stack
 
