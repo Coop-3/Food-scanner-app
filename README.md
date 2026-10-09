@@ -40,9 +40,9 @@ ExpiTrack lets users add food items by hand, by photo, or by scanning an expirat
 
 TODO: add simulator or device screenshots to a `docs/` folder and link them here.
 
-![Dashboard](Pic/Dashboard_Screen.png)
-![Add item](Pic/Add-item.png)
-![Grocery suggestions](Pic/Grocery-list.png)
+![Dashboard](Dashboard_Screen.png)
+![Add item](Add-item.png)
+![Grocery List](Grocery-list.png)
 
 ## Tech stack
 
